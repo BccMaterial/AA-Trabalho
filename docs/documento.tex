@@ -52,6 +52,8 @@
 
 \textbf{Implementação:} (inserir o link pra qnd tiver o git)
 
+\textbf{Complexidade:} (inserir complexidade)
+
 \section{Estratégia de Solução}
 
 O problema foi resolvido modelando a matriz $m \times n$  como um \textbf{grafo não-direcionado}, onde:
@@ -75,6 +77,8 @@ Como a podridão se espalha de forma uniforme e simultânea a partir de várias 
 
 \textbf{Implementação:} (inserir o link pra qnd tiver o git)
 
+\textbf{Complexidade:} (inserir complexidade)
+
 \section{Estratégia de Solução}
 
 O problema foi resolvido modelando a matriz $m \times n$ (o labirinto) como um grafo não-direcionado e não-ponderado, onde:
@@ -97,6 +101,8 @@ Como o objetivo principal é encontrar o caminho mais curto (menor número de pa
 \textbf{Paradigma:} Programação Dinâmica (Bottom-Up / Tabulação)
 
 \textbf{Implementação:} (inserir o link pra qnd tiver o git)
+
+\textbf{Complexidade:} (inserir complexidade)
 
 \section{Estratégia de Solução}
 
@@ -123,6 +129,8 @@ O algoritmo funciona em \textbf{três etapas}:
 
 \textbf{Implementação:} (inserir o link pra qnd tiver o git)
 
+\textbf{Complexidade:} (inserir complexidade)
+
 \section{Estratégia de Solução}
 
 O problema foi resolvido modelando o sistema de estradas do país como um \textbf{grafo valorado} e \textbf{não-direcionado}, onde:
@@ -138,5 +146,17 @@ A restrição fundamental do problema diz que, sempre que o veículo interceptar
 	\item{\textbf{Processamento do Caminho Mínimo (Dijkstra):} Executa-se o algoritmo de Dijkstra partindo do vértice inicial $K$ (a cidade onde o veículo foi consertado). Utiliza-se um vetor de distâncias \texttt{dist} inicializado com infinito e uma fila de prioridades (ou busca linear do menor vértice não visitado devido aos limites moderados de $N \le 250$) para computar o menor custo cumulativo acumulado até cada vértice do grafo;}
 	\item{\textbf{Verificação Final:} Quando o algoritmo termina de processar os caminhos, o valor mínimo do custo acumulado para alcançar de forma válida o destino estará contido na posição correspondente à última cidade da rota de serviço (\texttt{dist[C - 1]}), sendo impresso como resultado para cada caso de teste.}
 \end{enumerate}
+
+\chapter{Beautiful Arrangement}
+
+\textbf{Problema:} \href{https://leetcode.com/problems/beautiful-arrangement/description/}{Beautiful Arrangement}
+
+\textbf{Paradigma:} Backtracking
+
+\textbf{Implementação:} \href{https://github.com/BccMaterial/AA-Trabalho/blob/main/c/beautifulArrangement.c}{./c/beautifulArrangement.c}
+
+\textbf{Complexidade:} $O(n!)$
+
+\section{Estratégia de Solução}
 
 \end{document}
