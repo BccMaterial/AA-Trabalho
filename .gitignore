@@ -1,3 +1,13 @@
+# Autogen
+.ccls
+.ccls-cache
+build
+
+# IDE
+.vscode
+
+
+# LATEX
 # Arquivos auxiliares
 *.aux
 *.bbl
