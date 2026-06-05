@@ -190,7 +190,7 @@ Memoização é utilizada para evitar recalcular múltiplas vezes trechos iguais
 
 \section{Estratégia de Solução}
 
-É utilizado uma abordagem gulosa, onde ordenamos o vetor de fatores de ganância das crianças e o vetor de tamanhos dos cookies em uma ordem crescente. Em seguida, usamos dois índices: um para percorrer as crianças (variável \texttt{child}) e outro para percorrer os cookies (variável \texttt{cookie}). 
+É utilizado uma abordagem gulosa, onde ordenamos o vetor de fatores de ganância das crianças e o vetor de tamanhos dos cookies em uma ordem crescente. Em seguida, usamos dois índices: um para percorrer as crianças (variável \texttt{child}) e outro para percorrer os cookies (variável \texttt{cookie}).
 
 A principal estratégia é tentar satisfazer primeiro as crianças menos exigentes, utilizando o menor cookie possível. Se o cookie atual possuir tamanho suficiente para satisfazer a criança atual, então contamos essa criança como satisfeita e avançamos para a próxima criança. Caso contrário, pulamos esse cookie e utilizamos o próximo, uma vez que ele não será suficiente para nenhuma criança com fator de ganância maior. Assim, evitamos desperdiçar cookies grandes com crianças que poderiam ser satisfeitas com cookies menores, maximizando o número total de crianças satisfeitas. A complexidade de tempo da solução é dominada pela ordenação dos vetores.
 
