@@ -128,10 +128,10 @@ O algoritmo funciona em \textbf{três etapas}:
 A implementação foi submetida na plataforma \textbf{BeeCrowd} e aceita com sucesso, atendendo a todos os casos de teste disponibilizados pelo juiz online.
 
 \begin{figure}[H]
-    \centering
-    \includegraphics[width=0.9\textwidth]{assets/iceStatuesFestival.png}
-    \caption{Resultado da submissão do problema Ice Statues Festival no BeeCrowd.}
-    \label{fig:ice-statues-festival-result}
+  \centering
+  \includegraphics[width=0.9\textwidth]{assets/iceStatuesFestival.png}
+  \caption{Resultado da submissão do problema Ice Statues Festival no BeeCrowd.}
+  \label{fig:ice-statues-festival-result}
 \end{figure}
 
 \chapter{Route Change}
@@ -165,10 +165,10 @@ A restrição fundamental do problema diz que, sempre que o veículo interceptar
 A implementação foi submetida na plataforma \textbf{BeeCrowd} e aceita com sucesso, atendendo a todos os casos de teste disponibilizados pelo juiz online.
 
 \begin{figure}[H]
-    \centering
-    \includegraphics[width=0.9\textwidth]{assets/routeChange.png}
-    \caption{Resultado da submissão do problema Route Change no BeeCrowd.}
-    \label{fig:route-change-result}
+  \centering
+  \includegraphics[width=0.9\textwidth]{assets/routeChange.png}
+  \caption{Resultado da submissão do problema Route Change no BeeCrowd.}
+  \label{fig:route-change-result}
 \end{figure}
 
 \chapter{Beautiful Arrangement}
@@ -189,9 +189,9 @@ Uma disposição é considerada válida quando, para cada posição $i$, o núme
 
 A estratégia consiste em construir o arranjo de forma incremental. Para cada posição da sequência, são testados apenas os números ainda não utilizados que satisfazem a condição de divisibilidade exigida. Quando um número válido é encontrado, ele é marcado como utilizado e a busca continua recursivamente para a próxima posição. O algoritmo funciona em \textbf{três etapas}:
 \begin{enumerate}
-    \item{\textbf{Escolha de um Número Válido:} Para a posição atual \texttt{pos}, percorrem-se todos os números de $1$ até $n$. Um número só pode ser escolhido se ainda não tiver sido utilizado e satisfizer a condição de divisibilidade em relação à posição.}
-    \item{\textbf{Exploração Recursiva:} Após selecionar um número válido, ele é marcado no vetor \texttt{usado} e a função é chamada recursivamente para preencher a próxima posição da sequência.}
-    \item{\textbf{Retrocesso (Backtracking):} Quando a exploração de uma escolha termina, o número é desmarcado para que possa ser reutilizado em outras combinações. Caso todas as posições tenham sido preenchidas (\texttt{pos > n}), uma disposição válida foi encontrada e o contador global é incrementado.}
+  \item{\textbf{Escolha de um Número Válido:} Para a posição atual \texttt{pos}, percorrem-se todos os números de $1$ até $n$. Um número só pode ser escolhido se ainda não tiver sido utilizado e satisfizer a condição de divisibilidade em relação à posição.}
+  \item{\textbf{Exploração Recursiva:} Após selecionar um número válido, ele é marcado no vetor \texttt{usado} e a função é chamada recursivamente para preencher a próxima posição da sequência.}
+  \item{\textbf{Retrocesso (Backtracking):} Quando a exploração de uma escolha termina, o número é desmarcado para que possa ser reutilizado em outras combinações. Caso todas as posições tenham sido preenchidas (\texttt{pos > n}), uma disposição válida foi encontrada e o contador global é incrementado.}
 \end{enumerate}
 
 O vetor \texttt{usado} é responsável por controlar quais números já fazem parte do arranjo atual, garantindo que cada valor seja utilizado apenas uma vez.
@@ -205,10 +205,10 @@ Como, no pior caso, o algoritmo explora todas as permutações possíveis dos $n
 A implementação foi submetida na plataforma \textbf{LeetCode} e aceita com sucesso, atendendo a todos os casos de teste disponibilizados pelo juiz online.
 
 \begin{figure}[H]
-    \centering
-    \includegraphics[width=0.9\textwidth]{assets/beautifulArrangement.png}
-    \caption{Resultado da submissão do problema Beautiful Arrangement no LeetCode.}
-    \label{fig:beautiful-arrangement-result}
+  \centering
+  \includegraphics[width=0.9\textwidth]{assets/beautifulArrangement.png}
+  \caption{Resultado da submissão do problema Beautiful Arrangement no LeetCode.}
+  \label{fig:beautiful-arrangement-result}
 \end{figure}
 
 \chapter{Different Ways to Add Parentheses}
@@ -235,10 +235,10 @@ Memoização é utilizada para evitar recalcular múltiplas vezes trechos iguais
 A implementação foi submetida na plataforma \textbf{LeetCode} e aceita com sucesso, atendendo a todos os casos de teste disponibilizados pelo juiz online.
 
 \begin{figure}[H]
-    \centering
-    \includegraphics[width=0.9\textwidth]{assets/parenthesis.png}
-    \caption{Resultado da submissão do problema Different Ways to Add Parentheses no LeetCode.}
-    \label{fig:parentheses-result}
+  \centering
+  \includegraphics[width=0.9\textwidth]{assets/parenthesis.png}
+  \caption{Resultado da submissão do problema Different Ways to Add Parentheses no LeetCode.}
+  \label{fig:parentheses-result}
 \end{figure}
 
 \chapter{Assign Cookies}
@@ -264,10 +264,53 @@ Após a ordenação, os dois vetores são percorridos uma única vez, com custo 
 A implementação foi submetida na plataforma \textbf{LeetCode} e aceita com sucesso, atendendo a todos os casos de teste disponibilizados pelo juiz online.
 
 \begin{figure}[H]
-    \centering
-    \includegraphics[width=0.9\textwidth]{assets/assignCookies.png}
-    \caption{Resultado da submissão do problema Assign Cookies no LeetCode.}
-    \label{fig:assign-cookies-result}
+  \centering
+  \includegraphics[width=0.9\textwidth]{assets/assignCookies.png}
+  \caption{Resultado da submissão do problema Assign Cookies no LeetCode.}
+  \label{fig:assign-cookies-result}
+\end{figure}
+
+\chapter{Pacific Atlantic Water Flow}
+
+\textbf{Problema:} \href{https://leetcode.com/problems/partition-labels/description/}{Pacific Atlantic Water Flow (Leet Code)}
+
+\textbf{Paradigma:} Grafos (Busca em largura)
+
+\textbf{Implementação:} \href{https://github.com/BccMaterial/AA-Trabalho/blob/main/python/pacificAtlanticWaterFlow.py}{./python/pacificAtlanticWaterFlow.py}
+
+\textbf{Complexidade:} $O(n \times m)$
+
+\section{Estratégia de Solução}
+
+O problema foi resolvido modelando a matriz de alturas como um \textbf{grafo implícito}, onde cada célula representa um vértice e possui arestas para suas células adjacentes (cima, baixo, esquerda e direita).
+
+A ideia central consiste em determinar quais células conseguem escoar água para os dois oceanos: o \textbf{Pacífico}, que toca as bordas superior e esquerda da matriz, e o \textbf{Atlântico}, que toca as bordas inferior e direita.
+
+Uma abordagem ingênua seria executar uma busca a partir de cada célula para verificar se a água consegue alcançar ambos os oceanos. Entretanto, essa estratégia resultaria em um custo computacional elevado. Para evitar esse problema, a direção do fluxo é invertida.
+
+Em vez de partir de cada célula em direção aos oceanos, o algoritmo inicia buscas a partir dos próprios oceanos, avançando apenas para células com altura maior ou igual à altura atual. Dessa forma, são identificadas todas as posições que podem alcançar cada oceano.
+
+O algoritmo funciona em \textbf{três etapas}:
+
+\begin{enumerate}
+	\item{\textbf{Busca a partir do Oceano Pacífico:} É executada uma busca em largura (BFS) iniciando em todas as células da primeira linha e da primeira coluna. Durante a exploração, uma célula vizinha só pode ser visitada se possuir altura maior ou igual à da célula atual. Todas as posições alcançadas são marcadas na matriz \texttt{pacific}.}
+	\item{\textbf{Busca a partir do Oceano Atlântico:} Uma segunda BFS é executada utilizando como origem todas as células da última linha e da última coluna. O mesmo critério de movimentação é utilizado, armazenando as posições alcançadas na matriz \texttt{atlantic}.}
+	\item{\textbf{Interseção dos Resultados:} Após as duas buscas, percorre-se toda a matriz verificando quais células foram alcançadas tanto pela busca do Pacífico quanto pela do Atlântico. Essas posições correspondem exatamente às células das quais a água pode escoar para ambos os oceanos e são adicionadas à resposta final.}
+\end{enumerate}
+
+A utilização de duas matrizes booleanas permite registrar eficientemente as células visitadas por cada oceano. Como cada célula é processada no máximo uma vez em cada busca, o algoritmo apresenta complexidade de tempo $O(n \times m)$.
+
+A complexidade de espaço também é $O(n \times m)$, devido às matrizes de visitação e à fila utilizada pela BFS.
+
+\section{Resultado da Submissão}
+
+A implementação foi submetida na plataforma \textbf{LeetCode} e aceita com sucesso, atendendo a todos os casos de teste disponibilizados pelo juiz online.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.9\textwidth]{assets/pacificAtlanticWaterFlow.png}
+  \caption{Resultado da submissão do problema Pacific Atlantic Water Flow no LeetCode.}
+  \label{fig:pacific-atlantic-water-flow-result}
 \end{figure}
 
 \chapter{Partition Labels}
@@ -290,8 +333,8 @@ Durante a varredura da partição, cada novo caractere encontrado pode possuir u
 
 Quando todos os caracteres compreendidos entre o início da partição e a posição \texttt{end} foram analisados, tem-se a garantia de que nenhuma letra dessa partição aparecerá posteriormente na string. Assim, a partição pode ser encerrada com segurança. O algoritmo funciona em \textbf{duas etapas}:
 \begin{enumerate}
-    \item{\textbf{Determinação das Últimas Ocorrências:} Percorre-se a string uma única vez para registrar a última posição de cada caractere em uma estrutura de mapeamento.}
-    \item{\textbf{Construção Gulosa das Partições:} A partir do início de cada partição, define-se inicialmente seu limite como a última ocorrência do primeiro caractere. Em seguida, todos os caracteres dentro desse intervalo são analisados. Caso algum deles possua uma última ocorrência mais distante, o limite da partição é expandido. Quando o intervalo é completamente percorrido, o tamanho da partição é calculado e armazenado, iniciando-se então uma nova partição.}
+	\item{\textbf{Determinação das Últimas Ocorrências:} Percorre-se a string uma única vez para registrar a última posição de cada caractere em uma estrutura de mapeamento.}
+	\item{\textbf{Construção Gulosa das Partições:} A partir do início de cada partição, define-se inicialmente seu limite como a última ocorrência do primeiro caractere. Em seguida, todos os caracteres dentro desse intervalo são analisados. Caso algum deles possua uma última ocorrência mais distante, o limite da partição é expandido. Quando o intervalo é completamente percorrido, o tamanho da partição é calculado e armazenado, iniciando-se então uma nova partição.}
 \end{enumerate}
 
 Ao final do processamento, o vetor de resposta contém os tamanhos de todas as partições válidas encontradas.
@@ -301,10 +344,10 @@ Ao final do processamento, o vetor de resposta contém os tamanhos de todas as p
 A implementação foi submetida na plataforma \textbf{LeetCode} e aceita com sucesso, atendendo a todos os casos de teste disponibilizados pelo juiz online.
 
 \begin{figure}[H]
-    \centering
-    \includegraphics[width=0.9\textwidth]{assets/partitionLabels.png}
-    \caption{Resultado da submissão do problema Partition Labels no LeetCode.}
-    \label{fig:partition-labels-result}
+	\centering
+	\includegraphics[width=0.9\textwidth]{assets/partitionLabels.png}
+	\caption{Resultado da submissão do problema Partition Labels no LeetCode.}
+	\label{fig:partition-labels-result}
 \end{figure}
 
 \end{document}
