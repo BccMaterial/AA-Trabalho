@@ -14,6 +14,8 @@
 \usepackage{setspace}
 \usepackage[section]{placeins}
 \usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{float}
 
 % Informações
 \titulo{Trabalho Final - Análise de Algoritmos}
@@ -121,6 +123,17 @@ O algoritmo funciona em \textbf{três etapas}:
 	\item{\textbf{Verificação Final:} Após preencher toda a tabela, a resposta ótima para o caso de teste estará no último índice (\texttt{dp[M]}), bastando imprimi-la. Como o bloco de tamanho $1$ sempre está presente, há a garantia de que uma solução viável sempre existirá.}
 \end{itemize}
 
+\section{Resultado da Submissão}
+
+A implementação foi submetida na plataforma \textbf{BeeCrowd} e aceita com sucesso, atendendo a todos os casos de teste disponibilizados pelo juiz online.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{assets/iceStatuesFestival.png}
+    \caption{Resultado da submissão do problema Ice Statues Festival no BeeCrowd.}
+    \label{fig:ice-statues-festival-result}
+\end{figure}
+
 \chapter{Route Change}
 
 \textbf{Problema:} \href{https://judge.beecrowd.com/en/problems/view/1123}{Route Change (BeeCrowd)}
@@ -146,6 +159,17 @@ A restrição fundamental do problema diz que, sempre que o veículo interceptar
 	\item{\textbf{Processamento do Caminho Mínimo (Dijkstra):} Executa-se o algoritmo de Dijkstra partindo do vértice inicial $K$ (a cidade onde o veículo foi consertado). Utiliza-se um vetor de distâncias \texttt{dist} inicializado com infinito e uma fila de prioridades (ou busca linear do menor vértice não visitado devido aos limites moderados de $N \le 250$) para computar o menor custo cumulativo acumulado até cada vértice do grafo;}
 	\item{\textbf{Verificação Final:} Quando o algoritmo termina de processar os caminhos, o valor mínimo do custo acumulado para alcançar de forma válida o destino estará contido na posição correspondente à última cidade da rota de serviço (\texttt{dist[C - 1]}), sendo impresso como resultado para cada caso de teste.}
 \end{enumerate}
+
+\section{Resultado da Submissão}
+
+A implementação foi submetida na plataforma \textbf{BeeCrowd} e aceita com sucesso, atendendo a todos os casos de teste disponibilizados pelo juiz online.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{assets/routeChange.png}
+    \caption{Resultado da submissão do problema Route Change no BeeCrowd.}
+    \label{fig:route-change-result}
+\end{figure}
 
 \chapter{Beautiful Arrangement}
 
@@ -176,6 +200,17 @@ Ao final da execução, o contador contém a quantidade total de arranjos que sa
 
 Como, no pior caso, o algoritmo explora todas as permutações possíveis dos $n$ números, sua complexidade de tempo é $O(n!)$.
 
+\section{Resultado da Submissão}
+
+A implementação foi submetida na plataforma \textbf{LeetCode} e aceita com sucesso, atendendo a todos os casos de teste disponibilizados pelo juiz online.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{assets/beautifulArrangement.png}
+    \caption{Resultado da submissão do problema Beautiful Arrangement no LeetCode.}
+    \label{fig:beautiful-arrangement-result}
+\end{figure}
+
 \chapter{Different Ways to Add Parentheses}
 
 \textbf{Problema:} \href{https://leetcode.com/problems/different-ways-to-add-parentheses/description/}{Different Ways to Add Parentheses (Leet Code)}
@@ -195,6 +230,17 @@ Quando a subexpressão é apenas um número e não possuí operadores, ocorre o 
 
 Memoização é utilizada para evitar recalcular múltiplas vezes trechos iguais da expressão, realizando o armazenamento de valores já calculados para cada subexpressão.
 
+\section{Resultado da Submissão}
+
+A implementação foi submetida na plataforma \textbf{LeetCode} e aceita com sucesso, atendendo a todos os casos de teste disponibilizados pelo juiz online.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{assets/parenthesis.png}
+    \caption{Resultado da submissão do problema Different Ways to Add Parentheses no LeetCode.}
+    \label{fig:parentheses-result}
+\end{figure}
+
 \chapter{Assign Cookies}
 
 \textbf{Problema:} \href{https://leetcode.com/problems/assign-cookies/description/}{Assign Cookies (Leet Code)}
@@ -203,7 +249,7 @@ Memoização é utilizada para evitar recalcular múltiplas vezes trechos iguais
 
 \textbf{Implementação:} \href{https://github.com/BccMaterial/AA-Trabalho/blob/main/python/cookies.py}{./python/cookies.py}
 
-\textbf{Complexidade:} $O(n \cdot \log{n} + m \cdot log{m})$, onde $n$ é o número de crianças e $m$ é o número de cookies.
+\textbf{Complexidade:} $O(n \cdot \log{n} + m \cdot log{m})$
 
 \section{Estratégia de Solução}
 
@@ -212,6 +258,17 @@ Memoização é utilizada para evitar recalcular múltiplas vezes trechos iguais
 A principal estratégia é tentar satisfazer primeiro as crianças menos exigentes, utilizando o menor cookie possível. Se o cookie atual possuir tamanho suficiente para satisfazer a criança atual, então contamos essa criança como satisfeita e avançamos para a próxima criança. Caso contrário, pulamos esse cookie e utilizamos o próximo, uma vez que ele não será suficiente para nenhuma criança com fator de ganância maior. Assim, evitamos desperdiçar cookies grandes com crianças que poderiam ser satisfeitas com cookies menores, maximizando o número total de crianças satisfeitas. A complexidade de tempo da solução é dominada pela ordenação dos vetores.
 
 Após a ordenação, os dois vetores são percorridos uma única vez, com custo $O(n + m)$. O espaço extra utilizado é $O(1)$, desconsiderando o espaço interno usado pelo algoritmo de ordenação.
+
+\section{Resultado da Submissão}
+
+A implementação foi submetida na plataforma \textbf{LeetCode} e aceita com sucesso, atendendo a todos os casos de teste disponibilizados pelo juiz online.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{assets/assignCookies.png}
+    \caption{Resultado da submissão do problema Assign Cookies no LeetCode.}
+    \label{fig:assign-cookies-result}
+\end{figure}
 
 \chapter{Partition Labels}
 
@@ -238,5 +295,16 @@ Quando todos os caracteres compreendidos entre o início da partição e a posi�
 \end{enumerate}
 
 Ao final do processamento, o vetor de resposta contém os tamanhos de todas as partições válidas encontradas.
+
+\section{Resultado da Submissão}
+
+A implementação foi submetida na plataforma \textbf{LeetCode} e aceita com sucesso, atendendo a todos os casos de teste disponibilizados pelo juiz online.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{assets/partitionLabels.png}
+    \caption{Resultado da submissão do problema Partition Labels no LeetCode.}
+    \label{fig:partition-labels-result}
+\end{figure}
 
 \end{document}
