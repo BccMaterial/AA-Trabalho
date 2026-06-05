@@ -270,9 +270,48 @@ A implementação foi submetida na plataforma \textbf{LeetCode} e aceita com suc
   \label{fig:assign-cookies-result}
 \end{figure}
 
+\chapter{Decode Ways}
+
+\textbf{Problema:} \href{https://leetcode.com/problems/decode-ways/description/}{Decode Ways (Leet Code)}
+
+\textbf{Paradigma:} Programação Dinâmica (Bottom-Up)
+
+\textbf{Implementação:} \href{https://github.com/BccMaterial/AA-Trabalho/blob/main/python/decodeWays.py}{./python/decodeWays.py}
+
+\textbf{Complexidade:} $O(n)$
+
+\section{Estratégia de Solução}
+
+O problema foi resolvido utilizando a técnica de \textbf{programação dinâmica}, cujo objetivo é calcular a quantidade de maneiras válidas de decodificar a sequência numérica fornecida.
+
+A ideia central consiste em definir um vetor \texttt{dp}, onde cada posição \texttt{dp[i]} representa o número de formas de decodificar os primeiros \texttt{i} caracteres da string. Dessa forma, a solução é construída incrementalmente a partir de subproblemas menores já resolvidos.
+
+Inicialmente, define-se \texttt{dp[0] = 1}, representando a decodificação da string vazia. Caso o primeiro caractere seja diferente de \texttt{'0'}, define-se também \texttt{dp[1] = 1}, indicando que existe uma única forma de decodificar o primeiro dígito.
+
+O algoritmo funciona em \textbf{duas etapas} para cada posição da string:
+
+\begin{enumerate}
+    \item{\textbf{Decodificação de um Dígito:} Se o caractere atual for diferente de \texttt{'0'}, ele pode ser interpretado individualmente como uma letra do alfabeto. Nesse caso, o número de decodificações da posição atual recebe a contribuição de \texttt{dp[i - 1]}.}
+
+    \item{\textbf{Decodificação de Dois Dígitos:} Verifica-se se os dois últimos caracteres formam um número entre 10 e 26. Quando essa condição é satisfeita, eles podem ser interpretados conjuntamente como uma única letra, adicionando \texttt{dp[i - 2]} ao total de decodificações da posição atual.}
+\end{enumerate}
+
+Ao final do processamento, a posição \texttt{dp[n]} contém a quantidade total de formas válidas de decodificar toda a string, sendo esse valor retornado como resposta.
+
+\section{Resultado da Submissão}
+
+A implementação foi submetida na plataforma \textbf{LeetCode} e aceita com sucesso, atendendo a todos os casos de teste disponibilizados pelo juiz online.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.9\textwidth]{assets/decodeWays.png}
+	\caption{Resultado da submissão do problema Decode Ways no LeetCode.}
+	\label{fig:decode-ways-result}
+\end{figure}
+
 \chapter{Pacific Atlantic Water Flow}
 
-\textbf{Problema:} \href{https://leetcode.com/problems/partition-labels/description/}{Pacific Atlantic Water Flow (Leet Code)}
+\textbf{Problema:} \href{https://leetcode.com/problems/pacific-atlantic-water-flow/description/}{Pacific Atlantic Water Flow (Leet Code)}
 
 \textbf{Paradigma:} Grafos (Busca em largura)
 
