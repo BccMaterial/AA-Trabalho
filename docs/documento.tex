@@ -159,6 +159,23 @@ A restrição fundamental do problema diz que, sempre que o veículo interceptar
 
 \section{Estratégia de Solução}
 
+O problema foi resolvido utilizando a técnica de \textit{Backtracking}, na qual permite gerar e testar todas as possíveis permutações dos números de $1$ até $n$, descartando imediatamente aquelas que violam as restrições do enunciado.
+
+Uma disposição é considerada válida quando, para cada posição $i$, o número colocado nessa posição satisfaz pelo menos uma das seguintes condições: $num \bmod i = 0$ e $i \bmod num = 0$.
+
+A estratégia consiste em construir o arranjo de forma incremental. Para cada posição da sequência, são testados apenas os números ainda não utilizados que satisfazem a condição de divisibilidade exigida. Quando um número válido é encontrado, ele é marcado como utilizado e a busca continua recursivamente para a próxima posição. O algoritmo funciona em \textbf{três etapas}:
+\begin{enumerate}
+    \item{\textbf{Escolha de um Número Válido:} Para a posição atual \texttt{pos}, percorrem-se todos os números de $1$ até $n$. Um número só pode ser escolhido se ainda não tiver sido utilizado e satisfizer a condição de divisibilidade em relação à posição.}
+    \item{\textbf{Exploração Recursiva:} Após selecionar um número válido, ele é marcado no vetor \texttt{usado} e a função é chamada recursivamente para preencher a próxima posição da sequência.}
+    \item{\textbf{Retrocesso (Backtracking):} Quando a exploração de uma escolha termina, o número é desmarcado para que possa ser reutilizado em outras combinações. Caso todas as posições tenham sido preenchidas (\texttt{pos > n}), uma disposição válida foi encontrada e o contador global é incrementado.}
+\end{enumerate}
+
+O vetor \texttt{usado} é responsável por controlar quais números já fazem parte do arranjo atual, garantindo que cada valor seja utilizado apenas uma vez.
+
+Ao final da execução, o contador contém a quantidade total de arranjos que satisfazem as restrições do problema, sendo esse valor retornado como resposta.
+
+Como, no pior caso, o algoritmo explora todas as permutações possíveis dos $n$ números, sua complexidade de tempo é $O(n!)$.
+
 \chapter{Different Ways to Add Parentheses}
 
 \textbf{Problema:} \href{https://leetcode.com/problems/different-ways-to-add-parentheses/description/}{Different Ways to Add Parentheses (Leet Code)}
@@ -214,9 +231,7 @@ Inicialmente, é realizado um pré-processamento da string para armazenar a \tex
 
 Durante a varredura da partição, cada novo caractere encontrado pode possuir uma última ocorrência mais distante. Nesse caso, o valor de \texttt{end} é atualizado para essa nova posição, expandindo a partição.
 
-Quando todos os caracteres compreendidos entre o início da partição e a posição \texttt{end} foram analisados, tem-se a garantia de que nenhuma letra dessa partição aparecerá posteriormente na string. Assim, a partição pode ser encerrada com segurança.
-
-O algoritmo funciona em \textbf{duas etapas}:
+Quando todos os caracteres compreendidos entre o início da partição e a posição \texttt{end} foram analisados, tem-se a garantia de que nenhuma letra dessa partição aparecerá posteriormente na string. Assim, a partição pode ser encerrada com segurança. O algoritmo funciona em \textbf{duas etapas}:
 \begin{enumerate}
     \item{\textbf{Determinação das Últimas Ocorrências:} Percorre-se a string uma única vez para registrar a última posição de cada caractere em uma estrutura de mapeamento.}
     \item{\textbf{Construção Gulosa das Partições:} A partir do início de cada partição, define-se inicialmente seu limite como a última ocorrência do primeiro caractere. Em seguida, todos os caracteres dentro desse intervalo são analisados. Caso algum deles possua uma última ocorrência mais distante, o limite da partição é expandido. Quando o intervalo é completamente percorrido, o tamanho da partição é calculado e armazenado, iniciando-se então uma nova partição.}
