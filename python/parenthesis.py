@@ -31,7 +31,11 @@ class Solution:
 
         return resolver(expression)
 
+#Divisão e conquista
+
 #As possíveis maneiras de colocar parênteses em uma ezpressão de n operadores segue a sequência de números de Catalan.
+
 #C_n ≈ 4^n / n^(3/2)
 #Sendo n o número de operadores, a quantidade de resultados possíveis pode crescer de maneira exponencial
+
 #Complexidade de tempo: O(C_n) ou O(4^n / n^(3/2))
