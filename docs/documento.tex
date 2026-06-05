@@ -170,6 +170,15 @@ A restrição fundamental do problema diz que, sempre que o veículo interceptar
 \textbf{Complexidade:} $O(C_n)$ ou $O(4^n / n^(3/2))$
 
 \section{Estratégia de Solução}
+Divisão e conquista é a estratégia utilizada para resolver o problema. Percorremos a expressão, e toda vez que um operador é encontrada, dividimos a expressão em uma subexpressão à esquerda do operador e a subexpressão à direita. Depois, recursivamente, calculamos todos os resultados possíves dessas partes.
+
+Após a obtenção dos possíveis resultados da esquerda e da direita, é feita a combinação de cada valor da esquerda com cada valor da direita utilizando o operador atual. Assim, realizamos a simulação de todas as possíveis maneiras de inserir parênteses.
+
+Quando a subexpressão é apenas um número e não possuí operadores, ocorre o caso base. Nele, ocorre o retorno do próprio número.
+
+Memoização é utilizada para evitar recalcular múltiplas vezes trechos iguais da expressão, realizando o armazenamento de valores já calculados para cada subexpressão.
+
+
 
 
 \end{document}
