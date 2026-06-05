@@ -196,4 +196,32 @@ A principal estratégia é tentar satisfazer primeiro as crianças menos exigent
 
 Após a ordenação, os dois vetores são percorridos uma única vez, com custo $O(n + m)$. O espaço extra utilizado é $O(1)$, desconsiderando o espaço interno usado pelo algoritmo de ordenação.
 
+\chapter{Partition Labels}
+
+\textbf{Problema:} \href{https://leetcode.com/problems/partition-labels/description/}{Partition Labels (Leet Code)}
+
+\textbf{Paradigma:} Greedy
+
+\textbf{Implementação:} \href{https://github.com/BccMaterial/AA-Trabalho/blob/main/python/partitionLabels.py}{./python/partitionLabels.py}
+
+\textbf{Complexidade:} $O(n)$
+
+\section{Estratégia de Solução}
+
+O problema foi resolvido utilizando uma estratégia \textbf{gulosa (greedy)}, cujo objetivo é particionar a \textit{string} no maior número possível de segmentos, garantindo que cada caractere apareça em apenas uma partição.
+
+Inicialmente, é realizado um pré-processamento da string para armazenar a \textbf{última ocorrência} de cada caractere. Dessa forma, para qualquer letra, é possível determinar até qual posição ela ainda precisa estar presente dentro da partição atual. O algoritmo percorre a string mantendo os índices \texttt{i}, que é o início da partição atual, e \texttt{end}, no qual trata-se da última posição que a partição atual deve alcançar para conter todas as ocorrências dos caractéres já encontrados.
+
+Durante a varredura da partição, cada novo caractere encontrado pode possuir uma última ocorrência mais distante. Nesse caso, o valor de \texttt{end} é atualizado para essa nova posição, expandindo a partição.
+
+Quando todos os caracteres compreendidos entre o início da partição e a posição \texttt{end} foram analisados, tem-se a garantia de que nenhuma letra dessa partição aparecerá posteriormente na string. Assim, a partição pode ser encerrada com segurança.
+
+O algoritmo funciona em \textbf{duas etapas}:
+\begin{enumerate}
+    \item{\textbf{Determinação das Últimas Ocorrências:} Percorre-se a string uma única vez para registrar a última posição de cada caractere em uma estrutura de mapeamento.}
+    \item{\textbf{Construção Gulosa das Partições:} A partir do início de cada partição, define-se inicialmente seu limite como a última ocorrência do primeiro caractere. Em seguida, todos os caracteres dentro desse intervalo são analisados. Caso algum deles possua uma última ocorrência mais distante, o limite da partição é expandido. Quando o intervalo é completamente percorrido, o tamanho da partição é calculado e armazenado, iniciando-se então uma nova partição.}
+\end{enumerate}
+
+Ao final do processamento, o vetor de resposta contém os tamanhos de todas as partições válidas encontradas.
+
 \end{document}
