@@ -52,9 +52,9 @@
 
 \textbf{Paradigma:} Grafos (Busca em Largura / BFS Multi-source)
 
-\textbf{Implementação:} (inserir o link pra qnd tiver o git)
+\textbf{Implementação:} (https://github.com/BccMaterial/AA-Trabalho/blob/main/c++/rotting_oranges.cpp)
 
-\textbf{Complexidade:} (inserir complexidade)
+\textbf{Complexidade:} ($O(m \times n)$)
 
 \section{Estratégia de Solução}
 
@@ -71,15 +71,26 @@ Como a podridão se espalha de forma uniforme e simultânea a partir de várias 
 	\item{\textbf{Verificação Final:} Quando a fila fica vazia, se o contador de laranjas frescas ainda for maior que zero, significa que algumas laranjas ficaram isoladas no grafo, retornando -1. Caso contrário, retorna o total de minutos decorridos.}
 \end{enumerate}
 
+\section{Resultado da Submissão}
+
+A implementação foi submetida na plataforma \textbf{LeetCode} e aceita com sucesso, atendendo a todos os casos de teste disponibilizados pelo juiz online.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.9\textwidth]{assets/rotting_oranges.png}
+  \caption{Resultado da submissão do problema Rotting Oranges no LeetCode.}
+  \label{fig:rotting-oranges-result}
+\end{figure}
+
 \chapter{Nearest Exit from Maze}
 
 \textbf{Problema:} \href{https://leetcode.com/problems/nearest-exit-from-entrance-in-maze/description/}{Nearest Exit from Maze (LeetCode)}
 
 \textbf{Paradigma:} Grafos (Busca em Largura / BFS Multi-source)
 
-\textbf{Implementação:} (inserir o link pra qnd tiver o git)
+\textbf{Implementação:} (https://github.com/BccMaterial/AA-Trabalho/blob/main/c++/maze.cpp)
 
-\textbf{Complexidade:} (inserir complexidade)
+\textbf{Complexidade:} ($O(m \times n)$)
 
 \section{Estratégia de Solução}
 
@@ -95,6 +106,18 @@ Como o objetivo principal é encontrar o caminho mais curto (menor número de pa
 	\item{\textbf{Busca e Expansão (Passo a Passo):} A fila é processada vértice a vértice. Para cada célula retirada, o algoritmo calcula as posições dos seus quatro vizinhos. Se um vizinho for válido (estiver dentro dos limites e for um caminho livre '.'), o algoritmo marca-o como visitado ('+'). Imediatamente a seguir, verifica se essa célula vizinha se encontra numa das bordas da matriz (linha ou coluna igual a $0$, ou igual ao limite máximo). Se for uma borda, a saída mais próxima foi encontrada e o algoritmo retorna de imediato o número de passos atuais mais um. Caso contrário, coloca o vizinho na fila para a expansão do próximo nível;}
 	\item{\textbf{Verificação Final:} Quando a fila de processamento fica completamente vazia, significa que todos os caminhos possíveis foram explorados. Se a execução chegar a este ponto sem ter retornado nenhum valor na etapa anterior, conclui-se que não existe nenhuma rota possível para uma saída, retornando assim $-1$.}
 \end{enumerate}
+
+\section{Resultado da Submissão}
+
+A implementação foi submetida na plataforma \textbf{LeetCode} e aceita com sucesso, atendendo a todos os casos de teste disponibilizados pelo juiz online.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.9\textwidth]{assets/maze.png}
+  \caption{Resultado da submissão do problema Nearest Exit from Entrance in Maze no LeetCode.}
+  \label{fig:maze-result}
+\end{figure}
+
 
 \chapter{Ice Statues Festival}
 
