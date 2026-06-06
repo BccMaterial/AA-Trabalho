@@ -1,5 +1,6 @@
 int contador;
 
+
 void backtrack(int pos, int n, int usado[]) {
   if (pos > n) {
     contador++;
